@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'core/theme/app_theme.dart';
+import 'features/portfolio/view/portfolio_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,22 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(debugShowCheckedModeBanner: false, home: JPF());
-  }
-}
-
-class JPF extends StatefulWidget {
-  const JPF({super.key});
-
-  @override
-  State<JPF> createState() => _JPFState();
-}
-
-class _JPFState extends State<JPF> {
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text('Joseph portfolio creation')),
+    return MaterialApp(
+      title: 'Joseph Saladi | Flutter Developer Portfolio',
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.darkTheme,
+      home: const PortfolioPage(),
     );
   }
 }
